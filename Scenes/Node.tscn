@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://df3aw4n1h03tf"]
+
+[ext_resource type="Script" path="res://Scenes/Node.gd" id="1_jkk5g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qraqm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_oixob"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_jkk5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qraqm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(10, 10)
+mesh = SubResource("SphereMesh_oixob")
