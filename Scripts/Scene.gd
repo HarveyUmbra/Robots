@@ -11,8 +11,6 @@ func _ready():
 	spawn(Vector2(random.randf_range(1,100),random.randf_range(1,100)))
 	
 	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer_raw += delta
@@ -25,7 +23,6 @@ func _process(delta):
 		
 		
 	pass
-
 func spawn(pos:Vector2):
 	var instance = test.instantiate()
 	instance.position = pos
