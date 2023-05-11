@@ -1,39 +1,27 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
+@onready var line = load("res://Scenes/path.tscn")
 var random = RandomNumberGenerator.new()
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 func _ready():
 	random.randomize()
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var win = get_viewport().size
 	velocity.y += random.randf_range(-1,1)
 	velocity.x += random.randf_range(-1,1)
 	move_and_slide()
 	
-	
-	if win.x < position.x or position.x < 0:
+	if win.x-50 < position.x or position.x < 50:
 		queue_free()
-	if win.y < position.y or position.y < 0:
+	if win.y-50 < position.y or position.y < 50:
 		queue_free()
 	pass
 
-#	if not is_on_floor():
-#		velocity.y += gravity * delta
-#
-#	# Handle Jump.
-#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#		velocity.y = JUMP_VELOCITY
-#
-#	# Get the input direction and handle the movement/deceleration.
-#	# As good practice, you should replace UI actions with custom gameplay actions.
-#	var direction = Input.get_axis("ui_left", "ui_right")
-#	if direction:
-#		velocity.x = direction * SPEED
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _on_area_2d_area_entered(area):
+	var instance = line.instantiate()
+	instance.set_father(area.get_parent())
+	instance.set_mother(self)
+	self.add_child(instance)
+	pass # Replace with function body.
