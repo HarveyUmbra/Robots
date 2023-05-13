@@ -23,5 +23,5 @@ func _on_area_2d_area_entered(area):
 	var instance = line.instantiate()
 	instance.set_father(area.get_parent())
 	instance.set_mother(self)
-	self.add_child(instance)
+	get_parent().add_child(instance)
 	pass # Replace with function body.

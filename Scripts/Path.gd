@@ -1,5 +1,8 @@
 extends Path2D
 
+@onready var line = load("res://Scenes/test.tscn")
+var random = RandomNumberGenerator.new()
+
 var father
 var mother
 
@@ -10,10 +13,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if father != null and mother != null:
+		var instance = line.instantiate()
+		add_child(instance)
 		self.curve.set_point_position(0,father.position)
 		self.curve.set_point_position(1,mother.position)
-		print(father.position)
-		print(mother.position)
+		print(self.curve.get_point_position(0))
+		print(self.curve.get_point_position(1))
 		pass
 	else:
 		queue_free()

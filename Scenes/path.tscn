@@ -27,7 +27,6 @@ mesh = SubResource("BoxMesh_osk1j")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotation = 0.473932
-scale = Vector2(1, 1)
 
 [node name="Line2D" type="Line2D" parent="PathFollow2D"]
 points = PackedVector2Array(0, 0, 300, 0)
