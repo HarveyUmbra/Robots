@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var line = load("res://Scenes/path.tscn")
+@onready var line = preload("res://Scenes/path.tscn")
 var random = RandomNumberGenerator.new()
 
 func _ready():
@@ -24,4 +24,6 @@ func _on_area_2d_area_entered(area):
 	instance.set_father(area.get_parent())
 	instance.set_mother(self)
 	get_parent().add_child(instance)
+	
+	
 	pass # Replace with function body.

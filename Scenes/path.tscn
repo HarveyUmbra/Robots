@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8vok8d3eyflj"]
+[gd_scene load_steps=4 format=3 uid="uid://b8vok8d3eyflj"]
 
 [ext_resource type="Script" path="res://Scripts/Path.gd" id="1_bff5x"]
 
@@ -11,23 +11,13 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_osk1j"]
-size = Vector3(4.661, 2.468, 1)
-
 [node name="Path" type="Path2D"]
 material = SubResource("CanvasItemMaterial_11oti")
 curve = SubResource("Curve2D_o65sx")
 script = ExtResource("1_bff5x")
 metadata/_edit_horizontal_guides_ = []
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.780392, 0.286275, 0.501961, 1)
-self_modulate = Color(0.529412, 0.231373, 0.360784, 1)
-mesh = SubResource("BoxMesh_osk1j")
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = 0.473932
-
-[node name="Line2D" type="Line2D" parent="PathFollow2D"]
-points = PackedVector2Array(0, 0, 300, 0)
-width = 14.309
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

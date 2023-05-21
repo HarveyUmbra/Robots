@@ -1,6 +1,7 @@
 extends Path2D
 
-@onready var line = load("res://Scenes/test.tscn")
+@onready var line = preload("res://Scenes/test.tscn")
+@onready var timer = $Timer
 var random = RandomNumberGenerator.new()
 
 var father
@@ -13,14 +14,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if father != null and mother != null:
-		var instance = line.instantiate()
-		add_child(instance)
 		self.curve.set_point_position(0,father.position)
 		self.curve.set_point_position(1,mother.position)
-		print(self.curve.get_point_position(0))
-		print(self.curve.get_point_position(1))
 		pass
 	else:
+		queue_free()
+		pass
+	if curve.get_baked_length() > 199:
 		queue_free()
 		pass
 	pass
@@ -31,3 +31,11 @@ func set_mother(_mother):
 	mother = _mother
 func get_father():
 	return father
+
+
+func _on_timer_timeout():
+	var instance = line.instantiate()
+	add_child(instance)
+	#print(self.curve.get_point_position(0))
+	#print(self.curve.get_point_position(1))
+	pass # Replace with function body.
