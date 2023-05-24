@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8vok8d3eyflj"]
+[gd_scene load_steps=5 format=3 uid="uid://bqiho27g074d6"]
 
-[ext_resource type="Script" path="res://Scripts/Path.gd" id="1_bff5x"]
+[ext_resource type="Script" path="res://Scenes/path/Path_KI.gd" id="1_lpyam"]
+[ext_resource type="Script" path="res://Scripts/Line2D.gd" id="2_7l7nk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11oti"]
 blend_mode = 1
@@ -14,10 +15,18 @@ point_count = 2
 [node name="Path" type="Path2D"]
 material = SubResource("CanvasItemMaterial_11oti")
 curve = SubResource("Curve2D_o65sx")
-script = ExtResource("1_bff5x")
+script = ExtResource("1_lpyam")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
+
+[node name="Line2D" type="Line2D" parent="."]
+z_as_relative = false
+points = PackedVector2Array(0, 0, 0, 100)
+width = 2.0
+default_color = Color(0.839216, 0.839216, 0.839216, 1)
+script = ExtResource("2_7l7nk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

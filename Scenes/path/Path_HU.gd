@@ -1,6 +1,6 @@
 extends Path2D
 
-@onready var line = preload("res://Scenes/test.tscn")
+@onready var line = preload("res://Scenes/Speack/Speack_HU.tscn")
 @onready var timer = $Timer
 var random = RandomNumberGenerator.new()
 
@@ -20,7 +20,7 @@ func _process(_delta):
 	else:
 		queue_free()
 		pass
-	if curve.get_baked_length() > 199:
+	if curve.get_baked_length() > 169:
 		queue_free()
 		pass
 	pass
@@ -31,7 +31,6 @@ func set_mother(_mother):
 	mother = _mother
 func get_father():
 	return father
-
 
 func _on_timer_timeout():
 	var instance = line.instantiate()

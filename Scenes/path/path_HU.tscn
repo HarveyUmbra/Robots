@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd50m21vcjo0s"]
+
+[ext_resource type="Script" path="res://Scenes/path/Path_HU.gd" id="1_ce0lr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11oti"]
+blend_mode = 1
+
+[sub_resource type="Curve2D" id="Curve2D_o65sx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 503, 258)
+}
+point_count = 2
+
+[node name="Path" type="Path2D"]
+material = SubResource("CanvasItemMaterial_11oti")
+curve = SubResource("Curve2D_o65sx")
+script = ExtResource("1_ce0lr")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

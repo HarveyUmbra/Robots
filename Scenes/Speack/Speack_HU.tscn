@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cywgkovp5wti2"]
+
+[ext_resource type="Script" path="res://Scripts/test.gd" id="1_qr27a"]
+[ext_resource type="Texture2D" uid="uid://q5imhsgeyhnu" path="res://Images/Text.svg" id="2_0apst"]
+
+[node name="Node2D" type="PathFollow2D"]
+cubic_interp = false
+script = ExtResource("1_qr27a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0apst")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(0, -5, 0, 5)
+width = 2.0

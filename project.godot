@@ -14,3 +14,7 @@ config/name="Robots"
 run/main_scene="res://Scenes/Scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://Images/icon.svg"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0807833, 0.0807834, 0.0807833, 1)
