@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q5imhsgeyhnu"
-path="res://.godot/imported/Text.svg-329d5a47b2a31776c38ad632940e0d0d.ctex"
+uid="uid://fplaiip58tn"
+path="res://.godot/imported/Human_Alone.svg-c0cd05266fda2a5ac5fbd34958698dd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Text.svg"
-dest_files=["res://.godot/imported/Text.svg-329d5a47b2a31776c38ad632940e0d0d.ctex"]
+source_file="res://Images/Human_Alone.svg"
+dest_files=["res://.godot/imported/Human_Alone.svg-c0cd05266fda2a5ac5fbd34958698dd9.ctex"]
 
 [params]
 

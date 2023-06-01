@@ -21,7 +21,8 @@ func _physics_process(_delta):
 
 func _on_area_2d_area_entered(area):
 	var name = area.get_parent().get_name()
-	if name.find("H") == -1:
+	var search = name.findn("KI")
+	if search != -1:
 		var instance = line.instantiate()
 		instance.set_father(area.get_parent())
 		instance.set_mother(self)

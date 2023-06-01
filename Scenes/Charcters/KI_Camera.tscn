@@ -1,18 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpc5cy3kaspy2"]
+[gd_scene load_steps=5 format=3 uid="uid://bcrf4v0wulpw6"]
 
-[ext_resource type="Script" path="res://Scenes/Charcters/KI.gd" id="1_mwsb7"]
-[ext_resource type="Texture2D" uid="uid://bwj36m8kbajkw" path="res://Images/KI_Image.svg" id="2_6r414"]
+[ext_resource type="Script" path="res://Scenes/Charcters/KI_Camera.gd" id="1_q67sy"]
+[ext_resource type="Texture2D" uid="uid://bwj36m8kbajkw" path="res://Images/KI_Image.svg" id="2_1hn8y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qraqm"]
-radius = 40.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_oixob"]
+radius = 50.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdqfy"]
 radius = 70.0
 
-[node name="KI" type="CharacterBody2D"]
-script = ExtResource("1_mwsb7")
+[node name="KI_Camera" type="CharacterBody2D"]
+script = ExtResource("1_q67sy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qraqm")
@@ -20,12 +18,7 @@ shape = SubResource("CircleShape2D_qraqm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 10
 z_as_relative = false
-texture = ExtResource("2_6r414")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-visible = false
-scale = Vector2(10, 10)
-mesh = SubResource("SphereMesh_oixob")
+texture = ExtResource("2_1hn8y")
 
 [node name="Area2D" type="Area2D" parent="."]
 
