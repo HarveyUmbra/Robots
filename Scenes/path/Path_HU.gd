@@ -20,7 +20,7 @@ func _process(_delta):
 	else:
 		queue_free()
 		pass
-	if curve.get_baked_length() > 169:
+	if curve.get_baked_length() > 140:
 		queue_free()
 		pass
 	pass

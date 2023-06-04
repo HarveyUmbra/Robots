@@ -10,12 +10,6 @@ var random = RandomNumberGenerator.new()
 
 func _ready():
 	random.randomize()
-	var instance = KI.instantiate()
-	var instance2 = HU_Standart.instantiate()
-	instance.position = Vector2(500,300)
-	instance2.position = Vector2(500,350)
-	self.add_child(instance)
-	self.add_child(instance2)
 	spawntimer.start()
 	pass # Replace with function body.
 
@@ -23,17 +17,6 @@ func _process(_delta):
 	pass
 
 func _on_timer_timeout():
-#	if random.randi_range(0, 1) > 0.5:
-#		var instance = KI.instantiate()
-#		instance.position = get_new_spawn_position()
-#		self.add_child(instance)
-#		pass
-#	else:
-#		var instance = HU.instantiate()
-#		instance.position = get_new_spawn_position()
-#		self.add_child(instance)
-#		pass
-#	pass # Replace with function body.
 	match random.randi_range(0,5):
 		0,1:
 			var instance = KI.instantiate()

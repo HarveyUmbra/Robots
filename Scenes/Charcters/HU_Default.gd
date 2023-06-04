@@ -30,3 +30,8 @@ func _on_area_2d_area_entered(area):
 		get_parent().add_child(instance)
 		pass
 	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	queue_free()
+	pass # Replace with function body.
